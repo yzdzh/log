@@ -82,6 +82,7 @@ func (zapAdapter *zapAdapter) Build() {
 	}
 
 	conf := zap.NewProductionEncoderConfig()
+	conf.LevelKey="level_name"
 	conf.EncodeTime = zapcore.ISO8601TimeEncoder
 	cnf := zapcore.NewJSONEncoder(conf)
 	core := zapcore.NewCore(cnf, w, level)
