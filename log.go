@@ -19,8 +19,8 @@ var logger *Log
 
 // Log 默认会使用zap作为日志输出引擎. Log集成了日志切割的功能。默认文件大小1024M，自动压缩
 // 最大有3个文件备份，备份保存时间7天。默认不会打印日志被调用的文文件名和位置;
-// 输出:日志默认会被分成五类文件：xxx.log.DEBUG，xxx.log.INFO, xxx.log.WARN, xxx.log.ERROR, xxx.log.Request
-// error,panic都会打印在xxx.log.ERROR. 所有的请求都会打在xxx.log.Request
+// 输出:日志默认会被分成两类文件：xxx.log, xxx.log.Request
+// debug、info、warn、error、panic都会打印在xxx.log. 所有的请求都会打在xxx.log.Request
 // Adapter:经过比对现在流行的日志库：zap, logrus, zerolog; logrus 虽说格式化，插件化良好，但是
 // 其内部实现锁竞争太过剧烈，性能不好. zap 性能好，格式一般， zerolog性能没有zap好， 相比
 // 来说就没啥突出优点了
